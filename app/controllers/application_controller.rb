@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def user_logged_in?
     if session[:user_id]
       begin
-        @current_user = User.find_by(user_id: session[:user_id])
+        @current_user = User.find_by(id: session[:user_id])
       rescue ActiveRecord::RecordNotFound
         reset_user_session
       end
