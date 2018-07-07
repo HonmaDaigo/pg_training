@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  skip_before_action :user_logged_in?, only: [:index]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   
   def index
